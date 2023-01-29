@@ -1,7 +1,9 @@
 overwrite: true
 schema: "./src/schema.graphql"
-documents: "./src/operations/*.graphql"
+documents: ["./src/operations/*.graphql", "src/**/*.ts", "__tests__/**/*.ts"]
 generates:
+  ./src/gql/:
+    preset: 'client'
   ./src/generated-types.ts:
     plugins:
       - "typescript"
